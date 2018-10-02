@@ -1,0 +1,51 @@
+{
+  "connection": "default",
+  "collectionName": "campaign",
+  "info": {
+    "name": "campaign",
+    "description": ""
+  },
+  "options": {
+    "timestamps": true
+  },
+  "attributes": {
+    "nombre": {
+      "default": "",
+      "type": "string"
+    },
+    "imagen": {
+      "collection": "file",
+      "via": "related",
+      "plugin": "upload",
+      "required": false
+    },
+    "email": {
+      "default": "",
+      "type": "email"
+    },
+    "descripcion": {
+      "default": "",
+      "type": "text"
+    },
+    "fecha": {
+      "default": "",
+      "type": "date"
+    },
+    "lista": {
+      "default": "uno",
+      "type": "enumeration",
+      "required": true,
+      "enum": [
+        "uno",
+        " dos",
+        " tres",
+        " otro"
+      ]
+    },
+    "user": {
+      "model": "user",
+      "via": "campaign",
+      "plugin": "users-permissions"
+    }
+  }
+}
